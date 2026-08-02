@@ -77,14 +77,14 @@
           </article>
 
           <article class="card">
-            <h3>RISC-V CPU Core</h3>
+            <h3>RISC-V Processor Design</h3>
             <p>
               Notes and design ideas around instruction fetch, decode, execute flow, control path,
               and a simple RISC-V datapath.
             </p>
             <div class="card__dropdown">
               <div class="protocol-card">
-                <h4>Single Cycle</h4>
+                <h4>Single Cycle 32 Bit CPU</h4>
                 <div class="card__actions">
                   <a href="https://github.com/Agarwalprerna/Riscv/tree/main/Single%20Cycle%2032%20bit%20in%20SystemVerilog/Verifying%20R%20type%20%2C%20I%20%2C%20S%20%2C%20J%20%2C%20B%20instructions" rel="noreferrer">GitHub Code</a>
                   <a href="assets/RISC%20V%20single%20cycle%20Debugging%20(1).pdf" target="_blank" rel="noreferrer">Debugging PDF</a>
@@ -92,7 +92,7 @@
                 </div>
               </div>
               <div class="protocol-card">
-                <h4>Pipelined</h4>
+                <h4>Pipelined 32 Bit CPU</h4>
                 <div class="card__actions">
                   <a href="https://github.com/Agarwalprerna/Riscv/tree/main/5%20Stage%20Pipelined%20in%20System%20Verilog" target="_blank" rel="noreferrer">GitHub Code</a>
                   <a href="assets/RISC V single cycle Debugging (1).pdf" target="_blank" rel="noreferrer">Debugging PDF</a>
@@ -104,16 +104,61 @@
         </div>
       </section>
 
-      <section class="section" id="questions">
-        <a href="https://github.com/" target="_blank" rel="noreferrer" class="btn btn-section">Draw Circuit and Write RTL Code</a>
-      </section>
+      <section class="section" id="topics">
+        <div class="section__heading">
+          <h2>Practice Topics</h2>
+          <p>Structured learning flow for RTL thinking, verification, and FSM practice.</p>
+        </div>
 
-      <section class="section" id="randomization">
-        <a href="https://github.com/Agarwalprerna/SystemVerilog/tree/main/Assignments/Randomization" target="_blank" rel="noreferrer" class="btn btn-section">Randomization Questions</a>
-      </section>
+        <div class="project-grid">
+          <article class="card" id="questions">
+            <h3>Draw Circuit &amp; Write RTL Code</h3>
+            <p>Practice turning logic diagrams into synthesizable RTL and thinking through datapath behavior, control flow, and timing constraints.</p>
+            <div class="card__tags">
+              <span class="tag tag--clickable" onclick="window.open('https://github.com/', '_blank')">Counters</span>
+              <span class="tag tag--clickable" onclick="window.open('https://github.com/', '_blank')">Must Do</span>
+            </div>
+            <div class="card__actions">
+              <span class="link-span" onclick="window.open('https://github.com/', '_blank')">Read Case Study →</span>
+            </div>
+          </article>
 
-      <section class="section" id="assertions">
-        <a href="https://github.com/Agarwalprerna/SystemVerilog/tree/main/Assignments/Assertions" target="_blank" rel="noreferrer" class="btn btn-section">Assertions Questions</a>
+          <article class="card" id="fsm">
+            <h3>FSM</h3>
+            <p>Collaborative FSM design practice for state transitions, Moore/Mealy outputs, and RTL implementation with group-based learning.</p>
+            <div class="card__tags">
+              <span class="tag tag--clickable" onclick="window.open('https://github.com/', '_blank')">Verilog FSM</span>
+              <span class="tag tag--clickable" onclick="window.open('https://github.com/Agarwalprerna/SystemVerilog/tree/main/FSM/%20Moore%20FSM', '_blank')">System Verilog Based FSM</span>
+            </div>
+            <div class="card__actions">
+              <span class="link-span" onclick="window.open('https://github.com/', '_blank')">Read Case Study →</span>
+            </div>
+          </article>
+
+          <article class="card" id="randomization">
+            <h3>Randomization Questions</h3>
+            <p>Work on constrained random stimulus, coverage directives, functional coverage ideas, and advanced testbench creativity.</p>
+            <div class="card__tags">
+              <span class="tag tag--clickable" onclick="window.open('https://github.com/Agarwalprerna/SystemVerilog/tree/main/Assignments/Randomization', '_blank')">Pattern Based Questions</span>
+              <span class="tag tag--clickable" onclick="window.open('https://github.com/Agarwalprerna/SystemVerilog/tree/main/Assignments/Randomization', '_blank')">Moderate Level Questions</span>
+            </div>
+            <div class="card__actions">
+              <span class="link-span" onclick="window.open('https://github.com/Agarwalprerna/SystemVerilog/tree/main/Assignments/Randomization', '_blank')">Read Case Study →</span>
+            </div>
+          </article>
+
+          <article class="card" id="assertions">
+            <h3>Assertions Questions</h3>
+            <p>Strengthen property-based verification with assertion-focused exercises, cover points, and formal reasoning patterns.</p>
+            <div class="card__tags">
+              <span class="tag tag--clickable" onclick="window.open('https://github.com/Agarwalprerna/SystemVerilog/tree/main/Assignments/Assertions', '_blank')">Assertions</span>
+              <span class="tag tag--clickable" onclick="window.open('https://github.com/Agarwalprerna/SystemVerilog/tree/main/Assignments/Assertions', '_blank')">Verification</span>
+            </div>
+            <div class="card__actions">
+              <span class="link-span" onclick="window.open('https://github.com/Agarwalprerna/SystemVerilog/tree/main/Assignments/Assertions', '_blank')">Read Case Study →</span>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
   </body>
