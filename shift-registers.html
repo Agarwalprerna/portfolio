@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Counters - Draw Circuit & Write RTL Code | Prerna Agarwal</title>
+    <title>Shift Registers - Draw Circuit & Write RTL Code | Prerna Agarwal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -203,15 +203,14 @@
         <a href="index.html#questions" class="back-button">← Back to Practice Topics</a>
 
         <div class="detail-header">
-            <h1>Draw Circuit &amp; Write RTL Code</h1>
-            <p>Master the fundamentals of digital logic design with practical counter circuits</p>
+            <h1>Shift Registers</h1>
+            <p>Explore serial and parallel shift register designs with RTL examples and practical timing notes.</p>
         </div>
 
         <div class="detail-content">
-            <!-- PDF Viewer Section -->
             <div class="pdf-section">
                 <div class="pdf-header">
-                    <h2>📄 My Own Material</h2>
+                    <h2>📄 Reference Notes</h2>
                     <div class="pdf-controls">
                         <button onclick="previousPage()">← Prev</button>
                         <input type="number" id="pageNum" value="1" min="1" />
@@ -227,56 +226,39 @@
                 </div>
             </div>
 
-            <!-- Code Links Section -->
             <div class="code-section">
-                <h2>💻 My RTL Code </h2>
-                <p>click the Buttons to view the code</p>
+                <h2>💻My RTL Code Examples</h2>
+                <p>Click the buttons below to explore shift register implementations and design patterns.</p>
                 <div class="code-links">
-                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2040%20MOD-N%20counter" target="_blank" rel="noreferrer" class="code-link">
+                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2042%20SIPO%20shift%20register" target="_blank" rel="noreferrer" class="code-link">
                         <span class="code-link-icon">📚</span>
                         <div class="code-link-content">
-                            <h3>MOD N AsynchronousCounter</h3>
+                            <h3>Serial-In Parallel-Out Register</h3>
                            
                         </div>
                     </a>
-                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2037%20%203bit%20synchronous%20Up%20counter" target="_blank" rel="noreferrer" class="code-link">
+                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2044%20PISO%20register" target="_blank" rel="noreferrer" class="code-link">
                         <span class="code-link-icon">📚</span>
                         <div class="code-link-content">
-                            <h3>Synchronous Up Counter</h3>
-                            
+                            <h3>Parallel-In Serial-Out Register</h3>
+                         
                         </div>
                     </a>
-
-
-                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2038%203%20bit%20Synchronous%20down%20counter%20" target="_blank" rel="noreferrer" class="code-link">
+                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2041%20%20SISO%20%20shift%20register%20" target="_blank" rel="noreferrer" class="code-link">
                         <span class="code-link-icon">📚</span>
                         <div class="code-link-content">
-                            <h3>Synchronous Down Counter</h3>
-                            
+                            <h3>Serial In Serial Out Register</h3>
+                           
                         </div>
                     </a>
-
-                     <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2039%203bit%20Synchronous%20UP_down%20counter" target="_blank" rel="noreferrer" class="code-link">
+                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2043%20%20PIPO%20" target="_blank" rel="noreferrer" class="code-link">
                         <span class="code-link-icon">📚</span>
                         <div class="code-link-content">
-                            <h3>Synchronous UP-Down Counter</h3>
-                            
+                            <h3>Parallel-In Parallel-Out Register</h3>
+                           
                         </div>
                     </a>
-
-                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2035%20%20%204bit%20Ripple%20up_down%20counter" target="_blank" rel="noreferrer" class="code-link">
-                        <span class="code-link-icon">📚</span>
-                        <div class="code-link-content">
-                            <h3>Asynchronous Binary UP-Down Counter</h3>
-                            
-                        </div>
-                    </a>
-
-
                 </div>
-
-                
-                
             </div>
         </div>
     </main>
@@ -285,7 +267,6 @@
         let pdfDoc = null;
         const scale = 1.5;
 
-        // Load PDF
         async function loadPDF() {
             try {
                 const pdf = await pdfjsLib.getDocument('assets/APB_WORKING.pdf').promise;
@@ -293,7 +274,7 @@
                 document.getElementById('pageCount').textContent = pdf.numPages;
                 renderPage(1);
             } catch (error) {
-                document.getElementById('pdf-container').innerHTML = 
+                document.getElementById('pdf-container').innerHTML =
                     '<p style="color: var(--muted); padding: 2rem;">PDF file not found. Please check the file path.</p>';
                 console.error('PDF loading error:', error);
             }
@@ -301,7 +282,6 @@
 
         async function renderPage(pageNum) {
             if (!pdfDoc) return;
-            
             try {
                 const page = await pdfDoc.getPage(pageNum);
                 const canvas = document.getElementById('pdf-canvas');
@@ -319,33 +299,29 @@
                 await page.render(renderContext).promise;
                 document.getElementById('pageNum').value = pageNum;
             } catch (error) {
-                console.error('Error rendering page:', error);
-            }
-        }
-
-        function nextPage() {
-            const pageNum = parseInt(document.getElementById('pageNum').value) + 1;
-            if (pdfDoc && pageNum <= pdfDoc.numPages) {
-                renderPage(pageNum);
+                console.error('PDF render error:', error);
             }
         }
 
         function previousPage() {
-            const pageNum = parseInt(document.getElementById('pageNum').value) - 1;
-            if (pageNum >= 1) {
-                renderPage(pageNum);
-            }
+            const currentPage = parseInt(document.getElementById('pageNum').value, 10);
+            if (currentPage <= 1) return;
+            renderPage(currentPage - 1);
         }
 
-        document.getElementById('pageNum').addEventListener('change', (e) => {
-            const pageNum = parseInt(e.target.value);
-            if (pdfDoc && pageNum >= 1 && pageNum <= pdfDoc.numPages) {
-                renderPage(pageNum);
-            }
+        function nextPage() {
+            const currentPage = parseInt(document.getElementById('pageNum').value, 10);
+            if (!pdfDoc || currentPage >= pdfDoc.numPages) return;
+            renderPage(currentPage + 1);
+        }
+
+        document.getElementById('pageNum').addEventListener('change', (event) => {
+            const pageNumber = Number(event.target.value);
+            if (!pdfDoc || pageNumber < 1 || pageNumber > pdfDoc.numPages) return;
+            renderPage(pageNumber);
         });
 
-        // Load PDF on page load
-        window.addEventListener('load', loadPDF);
+        loadPDF();
     </script>
 </body>
 </html>
