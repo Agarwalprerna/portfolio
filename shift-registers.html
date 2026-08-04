@@ -269,7 +269,7 @@
 
         async function loadPDF() {
             try {
-                const pdf = await pdfjsLib.getDocument('assets/APB_WORKING.pdf').promise;
+                const pdf = await pdfjsLib.getDocument('assets/ShiftRegisters.pdf').promise;
                 pdfDoc = pdf;
                 document.getElementById('pageCount').textContent = pdf.numPages;
                 renderPage(1);
