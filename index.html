@@ -19,7 +19,21 @@
   <body>
     <header class="hero">
       <div class="hero__card">
-        <img src="assets/photo_2025-02-04_11-57-20-removebg-preview.png" alt="Profile photo of Prerna Agarwal" class="profile-photo" />
+        <div class="profile-block">
+          <img src="assets/photo_2025-02-04_11-57-20-removebg-preview.png" alt="Profile photo of Prerna Agarwal" class="profile-photo" />
+          <div class="social-links" aria-label="Social links">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="social-link" aria-label="Visit LinkedIn profile">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6.94 8.5A1.56 1.56 0 1 0 6.94 5.38a1.56 1.56 0 0 0 0 3.12ZM5.5 9.75h2.88V18H5.5zM10.5 9.75h2.76v1.12h.04c.38-.72 1.32-1.48 2.72-1.48 2.9 0 3.43 1.91 3.43 4.39V18h-2.88v-7.53c0-1.8-.03-4.12-2.51-4.12-2.52 0-2.9 1.97-2.9 4V18H10.5z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/Agarwalprerna" target="_blank" rel="noreferrer" class="social-link" aria-label="Visit GitHub profile">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .5A12 12 0 0 0 0 12.7a12.3 12.3 0 0 0 8.21 11.7c.6.11.82-.26.82-.58v-2.07c-3.34.73-4.04-1.43-4.04-1.43-.54-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.92 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.6-2.81 5.61-5.48 5.91.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.3 12.3 0 0 0 24 12.7 12 12 0 0 0 12 .5Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
         <div class="hero__content">
           <p class="eyebrow">ASIC Design Enthusiast</p>
           <h1>Prerna Agarwal</h1>
@@ -54,7 +68,7 @@
           <article class="card">
             <h3>SoC Protocols: AMBA</h3>
             <p>
-              A concise study of AMBA-based communication, including AXI, AHB, APB concepts,
+              A concise study of AMBA-based communication, including AXI, AHB, APB,UART,I2C concepts,
               handshaking, and interconnect design thinking.
             </p>
             <div class="card__dropdown">
@@ -63,7 +77,7 @@
                 <div class="card__actions">
                   <a href="https://github.com/Agarwalprerna/SOC-Protocols/tree/main/AMBA%20/APB" target="_blank" rel="noreferrer">GitHub Code</a>
                   <a href="assets/APB%20Results%20and%20Debugging%20(1).pdf" target="_blank" rel="noreferrer">Debugging PDF</a>
-                  <a href="assets/APB_WORKING.pdf" target="_blank" rel="noreferrer">Theory Notes</a>
+                  <a href="assets/APB_WORKING.pdf" target="_blank" rel="noreferrer">My Notes</a>
                 </div>
               </div>
               <div class="protocol-card">
@@ -71,9 +85,29 @@
                 <div class="card__actions">
                   <a href="https://github.com/Agarwalprerna/SOC-Protocols/tree/main/AMBA%20/AHB" target="_blank" rel="noreferrer">GitHub Code</a>
                   <a href="assets/ahb-debugging.pdf" target="_blank" rel="noreferrer">Debugging PDF</a>
-                  <a href="assets/AHB_HandwrittenNotes.pdf" target="_blank" rel="noreferrer">Theory Notes</a>
+                  <a href="assets/AHB_HandwrittenNotes.pdf" target="_blank" rel="noreferrer">My Notes</a>
                 </div>
               </div>
+
+              <div class="protocol-card">
+                <h4>I2C </h4>
+                <div class="card__actions">
+                  <a href="https://github.com/Agarwalprerna/SOC-Protocols/tree/main/I2C/Directed%20%20Testcases%20Verification" target="_blank" rel="noreferrer">GitHub Code</a>
+                  
+                  <a href="assets/AHB_HandwrittenNotes.pdf" target="_blank" rel="noreferrer">My Notes</a>
+                </div>
+              </div>
+
+              <div class="protocol-card">
+                <h4>UART </h4>
+                <div class="card__actions">
+                  <a href="https://github.com/Agarwalprerna/UART-communication-protocol" target="_blank" rel="noreferrer">GitHub Code</a>
+                  
+                  <a href="assets/AHB_HandwrittenNotes.pdf" target="_blank" rel="noreferrer">My Notes</a>
+                </div>
+              </div>
+
+
             </div>
           </article>
 
@@ -102,6 +136,24 @@
               </div>
             </div>
           </article>
+
+          <article class="card">
+            <h3>UVM TestBench</h3>
+            <p>
+              A UVM testbench suite for verifying RTL modules with constrained random stimuli,
+              functional coverage, and reusable verification components.
+            </p>
+            <div class="card__dropdown">
+              <div class="protocol-card">
+                <h4>UVM Verification</h4>
+                <div class="card__actions">
+                  <a href="https://github.com/" target="_blank" rel="noreferrer">Digital Circuits Verification</a>
+                  <a href="assets/UVM_Testbench_Debugging.pdf" target="_blank" rel="noreferrer">UVM Debugging PDF</a>
+                  <a href="assets/UVM_Testbench_Notes.pdf" target="_blank" rel="noreferrer">Memories Verification</a>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -119,6 +171,7 @@
               <span class="tag tag--clickable" onclick="window.location.href='counters.html'">Counters</span>
               <span class="tag tag--clickable" onclick="window.location.href='shift-registers.html'">Shift Registers</span>
               <span class="tag tag--clickable" onclick="window.location.href='mustdo-rtl-que.html'">Must Do RTL Que</span>
+              <span class="tag tag--clickable" onclick="window.location.href='mustdo-rtl-que.html'">Frequency Divider</span>
             </div>
             <div class="card__actions">
               <span class="link-span" onclick="window.location.href='mustdo-rtl-que.html'">Read Case Study →</span>
@@ -131,6 +184,7 @@
             <div class="card__tags">
               <span class="tag tag--clickable" onclick="window.open('https://github.com/', '_blank')">Verilog FSM</span>
               <span class="tag tag--clickable" onclick="window.open('https://github.com/Agarwalprerna/SystemVerilog/tree/main/FSM/%20Moore%20FSM', '_blank')">System Verilog Based FSM</span>
+              <span class="tag tag--clickable" onclick="window.open('https://github.com/Agarwalprerna/SystemVerilog/tree/main/FSM/%20Moore%20FSM', '_blank')">Basics FSM</span>
             </div>
             <div class="card__actions">
               <span class="link-span" onclick="window.open('https://github.com/', '_blank')">Read Case Study →</span>

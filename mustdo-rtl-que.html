@@ -35,9 +35,14 @@
 
         .detail-content {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
             gap: 2rem;
             align-items: start;
+        }
+
+        .detail-right {
+            display: grid;
+            gap: 2rem;
         }
 
         .pdf-section,
@@ -49,7 +54,7 @@
         }
 
         .pdf-section {
-            min-height: 780px;
+            min-height: 760px;
         }
 
         #pdf-container {
@@ -208,6 +213,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .detail-right {
+                gap: 1.5rem;
+            }
+
             .detail-header h1 {
                 font-size: 1.8rem;
             }
@@ -224,19 +233,6 @@
         </div>
 
         <div class="detail-content">
-            <div class="code-section">
-                <h2>� Follow this 4-step Interview Coding Framework</h2>
-                <p>Use a structured design approach before writing RTL. This helps you communicate clearly in interviews and keep the implementation clean.</p>
-                <div class="code-block">
-                    <ol>
-                        <li><strong>Understand the problem:</strong> Identify inputs, outputs and take the necessary assumptions.</li>
-                        <li><strong>Approach Explanation:</strong> </li>
-                        <li><strong>Start Coding:</strong> </li>
-                        <li><strong>Dry Run and verify:</strong> Apply some test cases then review it against edge cases.</li>
-                    </ol>
-                </div>
-            </div>
-
             <div class="pdf-section">
                 <div class="pdf-header">
                     <h2>📄 Must Do RTL Queue</h2>
@@ -255,31 +251,87 @@
                 </div>
             </div>
 
-            <div class="code-section">
-                <h2>📚 Related RTL Links</h2>
-                <p>Open these examples for additional queue and counter design reference.</p>
-                <div class="code-links">
-                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2040%20MOD-N%20counter" target="_blank" rel="noreferrer" class="code-link">
-                        <span class="code-link-icon">📚</span>
-                        <div class="code-link-content">
-                            <h3>MOD-N Counter</h3>
-                            <p>RTL counter design with enable and modulus control.</p>
-                        </div>
-                    </a>
-                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2041%20%20SISO%20%20shift%20register%20" target="_blank" rel="noreferrer" class="code-link">
-                        <span class="code-link-icon">📚</span>
-                        <div class="code-link-content">
-                            <h3>SISO Shift Register</h3>
-                            <p>Serial in / serial out shift register RTL example.</p>
-                        </div>
-                    </a>
-                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2042%20SIPO%20shift%20register" target="_blank" rel="noreferrer" class="code-link">
-                        <span class="code-link-icon">📚</span>
-                        <div class="code-link-content">
-                            <h3>SIPO Shift Register</h3>
-                            <p>Serial-in / parallel-out design for practical usage.</p>
-                        </div>
-                    </a>
+            <div class="detail-right">
+                <div class="code-section">
+                    <h2> Follow this 4-step Interview Coding Framework</h2>
+                    <p>Use a structured design approach before writing RTL. This helps you communicate clearly in interviews and keep the implementation clean.</p>
+                    <div class="code-block">
+                        <ol>
+                            <li><strong>Understand the problem:</strong> Identify inputs, outputs and take the necessary assumptions.</li>
+                            <li><strong>Approach Explanation</strong> </li>
+                            <li><strong>Start Coding</strong> </li>
+                            <li><strong>Dry Run and verify:</strong> Apply some test cases then review it against edge cases.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="code-section">
+                    <h2>📚 My RTL Links</h2>
+                    <p>These questions are available in Electronic Bit's coding interview section.</p>
+                    <div class="code-links">
+                        <a href="https://www.electronic-bit.com/coding-interview-questions/positive-edge-detector?language=verilog" target="_blank" rel="noreferrer" class="code-link">
+                            <span class="code-link-icon">📚</span>
+                            <div class="code-link-content">
+                                <h3>Positive Edge Detector</h3>
+                                
+                            </div>
+                        </a>
+                        <a href="https://www.electronic-bit.com/coding-interview-questions/negative-edge-detector?language=verilog" target="_blank" rel="noreferrer" class="code-link">
+                            <span class="code-link-icon">📚</span>
+                            <div class="code-link-content">
+                                <h3>Negative Edge Detector</h3>
+                               
+                            </div>
+                        </a>
+                        <a href="https://www.electronic-bit.com/coding-interview-questions/triangular-wave-generator?language=verilog" target="_blank" rel="noreferrer" class="code-link">
+                            <span class="code-link-icon">📚</span>
+                            <div class="code-link-content">
+                                <h3>Triangular Waveform Generator</h3>
+                               
+                            </div>
+                        </a>
+
+                        <a href="https://www.electronic-bit.com/coding-interview-questions/second-largest-number?language=verilog" target="_blank" rel="noreferrer" class="code-link">
+                            <span class="code-link-icon">📚</span>
+                            <div class="code-link-content">
+                                <h3>Second Largest Number</h3>
+                               
+                            </div>
+                        </a>
+                       
+                        <a href="https://hdlbits.01xz.net/wiki/Count10" target="_blank" rel="noreferrer" class="code-link">
+                            <span class="code-link-icon">📚</span>
+                            <div class="code-link-content">
+                                <h3>Decade Counter</h3>
+                               
+                            </div>
+                        </a>
+
+                        <a href="https://hdlbits.01xz.net/wiki/Countbcd" target="_blank" rel="noreferrer" class="code-link">
+                            <span class="code-link-icon">📚</span>
+                            <div class="code-link-content">
+                                <h3>4 digit BCD Counter</h3>
+                               
+                            </div>
+                        </a>
+
+                        <a href="https://hdlbits.01xz.net/wiki/Dualedge" target="_blank" rel="noreferrer" class="code-link">
+                            <span class="code-link-icon">📚</span>
+                            <div class="code-link-content">
+                                <h3>Dual Edge Detector</h3>
+                               
+                            </div>
+                        </a>
+                       
+                        <a href="https://hdlbits.01xz.net/wiki/Exams/ece241_2014_q7b" target="_blank" rel="noreferrer" class="code-link">
+                            <span class="code-link-icon">📚</span>
+                            <div class="code-link-content">
+                                <h3>Generate 1Hz Pulse from 1000Hz </h3>
+                               
+                            </div>
+                        </a>
+                       
+                    </div>
                 </div>
             </div>
         </div>
