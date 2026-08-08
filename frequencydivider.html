@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequency Divider - Draw Circuit & Write RTL Code | Prerna Agarwal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem;
+        }
+
+        .detail-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .detail-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .detail-header p {
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .pdf-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+
+        .pdf-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pdf-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .pdf-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .pdf-controls input {
+            width: 50px;
+            padding: 0.4rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface-2);
+            color: var(--text);
+        }
+
+        .pdf-controls button {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #5eead4, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(94, 234, 212, 0.3);
+        }
+
+        #pdf-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1rem;
+            max-height: 600px;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        #pdf-canvas {
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .pdf-status {
+            text-align: center;
+            color: var(--muted);
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .code-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+
+        .code-section h2 {
+            margin: 0 0 1.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .code-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .code-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .code-link:hover {
+            background: rgba(94, 234, 212, 0.1);
+            transform: translateX(4px);
+            border-color: var(--accent);
+        }
+
+        .code-link-icon {
+            font-size: 1.5rem;
+        }
+
+        .code-link-content h3 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1rem;
+        }
+
+        .code-link-content p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 900px) {
+            .detail-content {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="detail-container">
+        <a href="index.html#questions" class="back-button">← Back to Practice Topics</a>
+
+        <div class="detail-header">
+            <h1>Draw Circuit &amp; Write RTL Code</h1>
+            <p>Master the fundamentals of digital logic design with practical frequency divider circuits</p>
+        </div>
+
+        <div class="detail-content">
+            <!-- PDF Viewer Section -->
+            <div class="pdf-section">
+                <div class="pdf-header">
+                    <h2>📄 My Own Material</h2>
+                    <div class="pdf-controls">
+                        <button onclick="previousPage()">← Prev</button>
+                        <input type="number" id="pageNum" value="1" min="1" />
+                        <span class="pdf-status">/ <span id="pageCount">--</span></span>
+                        <button onclick="nextPage()">Next →</button>
+                    </div>
+                </div>
+                <div id="pdf-container">
+                    <canvas id="pdf-canvas"></canvas>
+                </div>
+                <div class="pdf-status">
+                    <p>📋 PDF viewer - Use arrows to navigate or enter page number directly</p>
+                </div>
+            </div>
+
+            <!-- Code Links Section -->
+            <div class="code-section">
+                <h2>💻 My RTL Code </h2>
+                <p>click the Buttons to view the code</p>
+                <div class="code-links">
+                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2040%20MOD-N%20counter" target="_blank" rel="noreferrer" class="code-link">
+                        <span class="code-link-icon">📚</span>
+                        <div class="code-link-content">
+                            <h3>Frequency Divide by 2</h3>
+                        </div>
+                    </a>
+                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2037%20%203bit%20synchronous%20Up%20counter" target="_blank" rel="noreferrer" class="code-link">
+                        <span class="code-link-icon">📚</span>
+                        <div class="code-link-content">
+                            <h3>Frequency Divide by 3</h3>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2038%203%20bit%20Synchronous%20down%20counter%20" target="_blank" rel="noreferrer" class="code-link">
+                        <span class="code-link-icon">📚</span>
+                        <div class="code-link-content">
+                            <h3>Frequency Divide by 5</h3>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2039%203bit%20Synchronous%20UP_down%20counter" target="_blank" rel="noreferrer" class="code-link">
+                        <span class="code-link-icon">📚</span>
+                        <div class="code-link-content">
+                            <h3>Frequency Divide by 4</h3>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Agarwalprerna/RTL-design-challenge/tree/main/DAY%2035%20%20%204bit%20Ripple%20up_down%20counter" target="_blank" rel="noreferrer" class="code-link">
+                        <span class="code-link-icon">📚</span>
+                        <div class="code-link-content">
+                            <h3>Asynchronous Binary UP-Down Counter</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let pdfDoc = null;
+        const scale = 1.5;
+
+        // Load PDF
+        async function loadPDF() {
+            try {
+                const pdf = await pdfjsLib.getDocument('assets/FrequencyDivider_compressed.pdf').promise;
+                pdfDoc = pdf;
+                document.getElementById('pageCount').textContent = pdf.numPages;
+                renderPage(1);
+            } catch (error) {
+                document.getElementById('pdf-container').innerHTML = 
+                    '<p style="color: var(--muted); padding: 2rem;">PDF file not found. Please check the file path.</p>';
+                console.error('PDF loading error:', error);
+            }
+        }
+
+        async function renderPage(pageNum) {
+            if (!pdfDoc) return;
+            
+            try {
+                const page = await pdfDoc.getPage(pageNum);
+                const canvas = document.getElementById('pdf-canvas');
+                const context = canvas.getContext('2d');
+                const viewport = page.getViewport({ scale: scale });
+
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                await page.render(renderContext).promise;
+                document.getElementById('pageNum').value = pageNum;
+            } catch (error) {
+                console.error('Error rendering page:', error);
+            }
+        }
+
+        function nextPage() {
+            const pageNum = parseInt(document.getElementById('pageNum').value) + 1;
+            if (pdfDoc && pageNum <= pdfDoc.numPages) {
+                renderPage(pageNum);
+            }
+        }
+
+        function previousPage() {
+            const pageNum = parseInt(document.getElementById('pageNum').value) - 1;
+            if (pageNum >= 1) {
+                renderPage(pageNum);
+            }
+        }
+
+        document.getElementById('pageNum').addEventListener('change', (e) => {
+            const pageNum = parseInt(e.target.value);
+            if (pdfDoc && pageNum >= 1 && pageNum <= pdfDoc.numPages) {
+                renderPage(pageNum);
+            }
+        });
+
+        // Load PDF on page load
+        window.addEventListener('load', loadPDF);
+    </script>
+</body>
+</html>
