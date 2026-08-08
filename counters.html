@@ -288,7 +288,7 @@
         // Load PDF
         async function loadPDF() {
             try {
-                const pdf = await pdfjsLib.getDocument('assets/COUNTERS.pdf').promise;
+                const pdf = await pdfjsLib.getDocument('assets/COUNTERS_compressed.pdf').promise;
                 pdfDoc = pdf;
                 document.getElementById('pageCount').textContent = pdf.numPages;
                 renderPage(1);

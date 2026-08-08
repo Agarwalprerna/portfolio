@@ -343,7 +343,7 @@
 
         async function loadPDF() {
             try {
-                const pdf = await pdfjsLib.getDocument('assets/MUSTdoRTLque.pdf').promise;
+                const pdf = await pdfjsLib.getDocument('assets/MUSTdoRTLque_compressed.pdf').promise;
                 pdfDoc = pdf;
                 document.getElementById('pageCount').textContent = pdf.numPages;
                 renderPage(1);
