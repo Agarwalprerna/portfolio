@@ -455,6 +455,23 @@ main {
   font-size: 0.95rem;
 }
 
+.protocol-card h4 a {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: rgba(94, 234, 212, 0.1);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.protocol-card h4 a:hover {
+  background: rgba(94, 234, 212, 0.18);
+  transform: translateX(2px);
+}
+
 .protocol-card .card__actions {
   display: flex;
   flex-direction: column;
