@@ -462,27 +462,39 @@ main {
 }
 
 .protocol-card .card__actions a {
-    font-size: 0.95rem;
-    padding: 0.85rem 1rem;
-    text-align: left;
-    border-radius: 14px;
-    background: rgba(94, 234, 212, 0.1);
-    transition: all 0.2s ease;
-    color: var(--text);
-    display: block;
-  .hero__card {
-    grid-template-columns: 1fr;
-    padding: 1.25rem;
-  }
+  font-size: 0.95rem;
+  padding: 0.85rem 1rem;
+  text-align: center;
+  border-radius: 14px;
+  background: rgba(94, 234, 212, 0.1);
+  transition: all 0.2s ease;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  position: relative;
+}
 
+.protocol-card .card__actions a::before {
+  content: "↗";
+  font-size: 1.15rem;
+  line-height: 1;
+  font-weight: 700;
+}
 
-  .profile-photo {
-    max-width: 220px;
-  }
+.hero__card {
+  grid-template-columns: 1fr;
+  padding: 1.25rem;
+}
 
-  .project-grid,
-  .topic-grid {
-    grid-template-columns: 1fr;
+.profile-photo {
+  max-width: 220px;
+}
+
+.project-grid,
+.topic-grid {
+  grid-template-columns: 1fr;
   }
 
   .card__dropdown {
