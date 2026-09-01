@@ -464,12 +464,25 @@ main {
 .protocol-card .card__actions a {
     font-size: 0.95rem;
     padding: 0.85rem 1rem;
-    text-align: left;
+    text-align: center;
     border-radius: 14px;
     background: rgba(94, 234, 212, 0.1);
     transition: all 0.2s ease;
     color: var(--text);
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    position: relative;
+  }
+
+  .protocol-card .card__actions a::before {
+    content: "↗";
+    font-size: 1.15rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+
   .hero__card {
     grid-template-columns: 1fr;
     padding: 1.25rem;
